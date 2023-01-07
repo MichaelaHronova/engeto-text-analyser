@@ -32,3 +32,8 @@ other freshwater genera and herring similar to those
 in modern oceans. Other fish such as paddlefish,
 garpike and stingray are also present.'''
 ]
+
+username = input('Jake je Vase prihlasovaci jmeno? ')
+password = input('Jake je Vase heslo? ')
+print(f'{username=}')
+print(f'{password=}')
