@@ -37,3 +37,17 @@ username = input('Jake je Vase prihlasovaci jmeno? ')
 password = input('Jake je Vase heslo? ')
 print(f'{username=}')
 print(f'{password=}')
+
+uzivatele = {
+    "bob": "123",
+    "ann": "pass123",
+    "mike": "password123",
+    "liz": "pass123" 
+}
+
+if username in uzivatele.keys():
+    print(f"Welcome to the app, {username}")
+else:
+    print("Unregistered user, terminating the program.")
+    quit()
+
