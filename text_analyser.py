@@ -33,8 +33,10 @@ in modern oceans. Other fish such as paddlefish,
 garpike and stingray are also present.'''
 ]
 
-username = input('Jake je Vase prihlasovaci jmeno? ')
-password = input('Jake je Vase heslo? ')
+# username = input('Jake je Vase prihlasovaci jmeno? ')
+# password = input('Jake je Vase heslo? ')
+username = "ann"
+password = "123"
 print(f'{username=}')
 print(f'{password=}')
 
@@ -46,8 +48,14 @@ uzivatele = {
 }
 
 if username in uzivatele.keys():
-    print(f"Welcome to the app, {username}")
+    if password == uzivatele[username]:
+        print(f"Welcome to the app, {username}")
+    else:
+        print("Incorrect password, terminating the program.")
+        quit()
 else:
     print("Unregistered user, terminating the program.")
     quit()
 
+
+    
