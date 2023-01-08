@@ -33,8 +33,8 @@ in modern oceans. Other fish such as paddlefish,
 garpike and stingray are also present.'''
 ]
 
-username = input('Jake je Vase prihlasovaci jmeno? ')
-password = input('Jake je Vase heslo? ')
+username = input('Please, input your username: ')
+password = input('Please, input your password: ')
 # username = "bob"
 # password = "123"
 print("----------------------------------------")
@@ -68,6 +68,8 @@ while True:
 
     if text_number_int in [1,2,3]:
         text = TEXTS[text_number_int - 1]
+        text = text.replace(".","")
+        text = text.replace(",", "")
         break
     else:
         print("This number of text is not available.")
@@ -109,9 +111,11 @@ print(f"There are {lowercase_word_count} lowercase words.")
 print(f"There are {numeric_strings_count} numeric strings.")
 print(f"The sum of all the numbers {numeric_strings_sum}.")
 print("----------------------------------------")
-print("LEN|  OCCURENCES  |NR.")    
-print("----------------------------------------")
+
 # print(dict_word_length)
 word_length_list = sorted(list(dict_word_length.keys()))
+word_highest_value = max(dict_word_length.values())
+print(f"LEN | {'OCCURENCES':{word_highest_value}} | NR.")    
+print("----------------------------------------")
 for number in word_length_list:
-    print(f"{number:3}| {dict_word_length[number]*'*':13}| {dict_word_length[number]}")
+    print(f"{number:3} | {dict_word_length[number]*'*':{word_highest_value}} | {dict_word_length[number]}")
