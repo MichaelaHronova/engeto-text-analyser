@@ -33,11 +33,11 @@ in modern oceans. Other fish such as paddlefish,
 garpike and stingray are also present.'''
 ]
 
-# username = input('Jake je Vase prihlasovaci jmeno? ')
-# password = input('Jake je Vase heslo? ')
-username = "bob"
-password = "123"
-
+username = input('Jake je Vase prihlasovaci jmeno? ')
+password = input('Jake je Vase heslo? ')
+# username = "bob"
+# password = "123"
+print("----------------------------------------")
 uzivatele = {
     "bob": "123",
     "ann": "pass123",
@@ -48,6 +48,8 @@ uzivatele = {
 if username in uzivatele.keys():
     if password == uzivatele[username]:
         print(f"Welcome to the app, {username}")
+        print("We have 3 texts to be analyzed.")
+        print("----------------------------------------")
     else:
         print("Incorrect password, terminating the program.")
         quit()
@@ -56,8 +58,8 @@ else:
     quit()
 
 while True:
-    # text_number_input = input("Enter a number btw. 1 and 3 to select: ")
-    text_number_input = "1"
+    text_number_input = input("Enter a number btw. 1 and 3 to select: ")
+    # text_number_input = "1"
     try:
         text_number_int = int(text_number_input)
     except ValueError:
@@ -70,9 +72,9 @@ while True:
     else:
         print("This number of text is not available.")
         continue
-
+print("----------------------------------------")
 print(text)
-
+print("----------------------------------------")
 # analyza textu
 word_list = text.split()
 total_word_count = 0
@@ -81,6 +83,7 @@ uppercase_word_count = 0
 lowercase_word_count = 0
 numeric_strings_count = 0
 numeric_strings_sum = 0
+dict_word_length = {}
 
 for word in word_list:
     total_word_count = total_word_count + 1
@@ -95,6 +98,9 @@ for word in word_list:
         numeric_strings_count = numeric_strings_count + 1
         numeric_strings_sum = numeric_strings_sum + int(word)
 
+    word_length = len(word)
+    dict_word_length[word_length] = dict_word_length.get(word_length,0) + 1
+
 
 print(f"There are {total_word_count} words in the selected text.")
 print(f"There are {titlecase_word_count} titlecase words.")
@@ -102,5 +108,10 @@ print(f"There are {uppercase_word_count} uppercase words.")
 print(f"There are {lowercase_word_count} lowercase words.")
 print(f"There are {numeric_strings_count} numeric strings.")
 print(f"The sum of all the numbers {numeric_strings_sum}.")
-
-    
+print("----------------------------------------")
+print("LEN|  OCCURENCES  |NR.")    
+print("----------------------------------------")
+# print(dict_word_length)
+word_length_list = sorted(list(dict_word_length.keys()))
+for number in word_length_list:
+    print(f"{number:3}| {dict_word_length[number]*'*':13}| {dict_word_length[number]}")
