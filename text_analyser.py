@@ -55,22 +55,21 @@ else:
     print("Unregistered user, terminating the program.")
     quit()
 
-#text_number_input = input("Enter a number btw. 1 and 3 to select: ")
-# zjistit jestli input 1,2,3
-text_number_input = "2"
+while True:
+    text_number_input = input("Enter a number btw. 1 and 3 to select: ")
+    # text_number_input = "2"
+    try:
+        text_number_int = int(text_number_input)
+    except ValueError:
+        print("Invalid value. The value has to be a number.")
+        continue
 
-
-try:
-    text_number_int = int(text_number_input)
-except ValueError:
-    print("Invalid value. The value has to be a number.")
-    quit()
-
-if text_number_int in [1,2,3]:
-    text = TEXTS[text_number_int - 1]
-else:
-    print("This number of text is not available.")
-    quit()
+    if text_number_int in [1,2,3]:
+        text = TEXTS[text_number_int - 1]
+        break
+    else:
+        print("This number of text is not available.")
+        continue
 
 print(text)
 # pokud ano, tak to vybere text
