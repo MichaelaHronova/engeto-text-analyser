@@ -35,10 +35,8 @@ garpike and stingray are also present.'''
 
 # username = input('Jake je Vase prihlasovaci jmeno? ')
 # password = input('Jake je Vase heslo? ')
-username = "ann"
+username = "bob"
 password = "123"
-print(f'{username=}')
-print(f'{password=}')
 
 uzivatele = {
     "bob": "123",
@@ -57,5 +55,27 @@ else:
     print("Unregistered user, terminating the program.")
     quit()
 
+#text_number_input = input("Enter a number btw. 1 and 3 to select: ")
+# zjistit jestli input 1,2,3
+text_number_input = "2"
+
+
+try:
+    text_number_int = int(text_number_input)
+except ValueError:
+    print("Invalid value. The value has to be a number.")
+    quit()
+
+if text_number_int in [1,2,3]:
+    text = TEXTS[text_number_int - 1]
+else:
+    print("This number of text is not available.")
+    quit()
+
+print(text)
+# pokud ano, tak to vybere text
+# pokud ne, tak to oznami a vrati zpatky na vyber
+
+# analyza textu
 
     
