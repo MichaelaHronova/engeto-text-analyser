@@ -56,8 +56,8 @@ else:
     quit()
 
 while True:
-    text_number_input = input("Enter a number btw. 1 and 3 to select: ")
-    # text_number_input = "2"
+    # text_number_input = input("Enter a number btw. 1 and 3 to select: ")
+    text_number_input = "1"
     try:
         text_number_int = int(text_number_input)
     except ValueError:
@@ -72,9 +72,35 @@ while True:
         continue
 
 print(text)
-# pokud ano, tak to vybere text
-# pokud ne, tak to oznami a vrati zpatky na vyber
 
 # analyza textu
+word_list = text.split()
+total_word_count = 0
+titlecase_word_count = 0
+uppercase_word_count = 0
+lowercase_word_count = 0
+numeric_strings_count = 0
+numeric_strings_sum = 0
+
+for word in word_list:
+    total_word_count = total_word_count + 1
+    if word.istitle():
+        titlecase_word_count = titlecase_word_count + 1
+    if word.isupper():  # 30N se vyhodnocuje taky jako uppercase
+        uppercase_word_count = uppercase_word_count + 1
+        # print(word)
+    if word.islower():
+        lowercase_word_count = lowercase_word_count + 1
+    if word.isnumeric():
+        numeric_strings_count = numeric_strings_count + 1
+        numeric_strings_sum = numeric_strings_sum + int(word)
+
+
+print(f"There are {total_word_count} words in the selected text.")
+print(f"There are {titlecase_word_count} titlecase words.")
+print(f"There are {uppercase_word_count} uppercase words.")
+print(f"There are {lowercase_word_count} lowercase words.")
+print(f"There are {numeric_strings_count} numeric strings.")
+print(f"The sum of all the numbers {numeric_strings_sum}.")
 
     
