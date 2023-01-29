@@ -3,7 +3,7 @@ projekt_1.py: první projekt do Engeto Online Python Akademie
 
 author: Michaela Hronová
 email: hronova.michaela09@gmail.com; hronova@ceps.cz
-discord: 
+discord: Míša H.#5316
 '''
 TEXTS = ['''
 Situated about 10 miles west of Kemmerer,
